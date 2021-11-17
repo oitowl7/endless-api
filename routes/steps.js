@@ -14,6 +14,8 @@ const conn = mysql.createConnection(db.connectionData);
 const query = util.promisify(conn.query).bind(conn);
 
 router.get('/test', async (req, res, next) => {
+  let steps = await query("SELECT * FROM steps order by stepWeight");
+  
   res.json({test: "message"});
 });
 
