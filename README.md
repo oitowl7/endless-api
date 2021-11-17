@@ -1,6 +1,6 @@
 # SingleStone Endless Node.js API
 
-This project is a node.js API used to serve the fictional [Endless website](https://github.com/oitowl7/endless-hooks-practice). The Github Pages site for this front end React project can be found [here](https://oitowl7.github.io/endless-hooks-practice/). It's current functionality involves only "how to steps" and the versioning belonging to each step with the ability to get, get all, post, update, update version, and delete for each step. It is connected to a Google Cloud MYSQL server. Much of the security on this site has been removed to make the functionality simpler (shortcuts & hacks).
+This project is a node.js API used to serve the fictional [Endless website](https://github.com/oitowl7/endless-hooks-practice). The Github Pages site for this front end React project can be found [here](https://oitowl7.github.io/endless-hooks-practice/). It's current functionality involves only "how to steps" and the versioning belonging to each step with the ability to get, get all, post, update, update version, and delete for each step. It is connected to a Google Cloud MYSQL server. Much of the security on this site has been removed to make the functionality simpler (shortcuts & hacks). Due to the API being hosted on a Heroku page, there will occasionally be 1 long loading cycle while Heroku redeploys the site from hibernation
 
 ## Installation and Usage:
 * Clone the existing repository
