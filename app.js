@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var db = require('./db.js');
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var stepsRouter = require('./routes/steps');
@@ -19,6 +20,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// trying to open up cors
+const corsOpts = {
+  origin: '*',
+
+  methods: [
+    'GET',
+    'POST',
+  ],
+
+  allowedHeaders: [
+    'Content-Type',
+  ],
+};
+
+app.use(cors(corsOpts));
 
 app.use('/', indexRouter);
 app.use('/steps', stepsRouter);
