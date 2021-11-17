@@ -13,6 +13,11 @@ const {
 const conn = mysql.createConnection(db.connectionData);
 const query = util.promisify(conn.query).bind(conn);
 
+router.get('/test', async (req, res, next) => {
+  res.json({test: "message"});
+});
+
+
 /* GET all steps. */
 router.get("/", async (req, res, next) => {
   try {
