@@ -15,7 +15,7 @@ const query = util.promisify(conn.query).bind(conn);
 
 router.get('/test', async (req, res, next) => {
   let steps = await query("SELECT * FROM steps order by stepWeight");
-  
+
   res.json({test: "message"});
 });
 
@@ -27,7 +27,7 @@ router.get("/", async (req, res, next) => {
     const versions = await query("SELECT * FROM versions");
 
     for (let i = 0; i < steps.length; i++) {
-      steps[i].versions = versions.filter(
+      steps[i].versionContent = versions.filter(
         (version) => version.fkStepId === steps[i].id
       );
       steps[i].stepNumber = i + 1;
@@ -48,7 +48,7 @@ router.get("/:id", async function (req, res, next) {
       `SELECT * FROM versions where fkStepId = ${req.params.id}`
     );
 
-    res.json({ ...step, versions: versions });
+    res.json({ ...step, versionContent: versions });
   } catch (error) {
     console.log(error);
     res.status(error.code || 500).json({ error: error.message });
