@@ -9,10 +9,10 @@ var debug = require('debug')('endless-api:server');
 var http = require('http');
 
 /**
- * Get port from environment and store in Express.
+ * Get 1 from environment and store in Express.
  */
 
-var port = normalizePort(process.env.LOCAL_PORT || '3000');
+var port = normalizePort(process.env.LOCAL_PORT || '8080');
 app.set('port', port);
 
 /**
